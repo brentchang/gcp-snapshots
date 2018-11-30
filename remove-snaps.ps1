@@ -44,20 +44,20 @@ Stop-Transcript
 #Google Cloud Platform blocks direct outbound mail on port 25.  Reference: https://cloud.google.com/compute/docs/tutorials/sending-mail/
 
 #Mail Server Settings
-$smtpServer = "mail.yourdomainname.com"
-$smtpPort = "2525" #Don't put 25 here - it will not work.  See link above.
+#$smtpServer = "mail.yourdomainname.com"
+#$smtpPort = "2525" #Don't put 25 here - it will not work.  See link above.
 
-$att = new-object Net.Mail.Attachment($TranscriptFileName)
-$msg = new-object Net.Mail.MailMessage
-$smtp = new-object Net.Mail.SmtpClient($smtpServer, $smtpPort)
+#$att = new-object Net.Mail.Attachment($TranscriptFileName)
+#$msg = new-object Net.Mail.MailMessage
+#$smtp = new-object Net.Mail.SmtpClient($smtpServer, $smtpPort)
 
 # Set the email from / to / subject / body / etc here:
-$msg.From = "gcpsnapshots@yourdomainname.com"
-$msg.To.Add("you@yourdomainname.com")
-$msg.Subject = "GCP Snapshot Cleanup Report"
-$msg.Body = "Please see the attached PowerShell transcript."
+#$msg.From = "gcpsnapshots@yourdomainname.com"
+#$msg.To.Add("you@yourdomainname.com")
+#$msg.Subject = "GCP Snapshot Cleanup Report"
+#$msg.Body = "Please see the attached PowerShell transcript."
 
 # Attach the log and ship it.
-$msg.Attachments.Add($att)
-$smtp.Send($msg)
-$att.Dispose()
+#$msg.Attachments.Add($att)
+#$smtp.Send($msg)
+#$att.Dispose()
